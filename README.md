@@ -55,7 +55,40 @@ for item in tuplo3:
 Por exemplo, quando se usa a forma mais simples de cópia, estamos a usar o método de "Aliasing":
 
 ```
+a = [1,2,3]
+
+b = a # Cópia por "aliasing", obtemos nova lista "b" que é igual à "a"
+
+print(b) --> [1,2,3]
+
+b[0] = 5 # Alteração do item com índice zero na nova lista "b", que passará de 1 para 5 (ou seja, agora b = [5,2,3])
+
+print(a) --> [5,2,3] # Mas a lista original "a" também foi alterada! Porque a nova lista "b" é apenas uma referência em memória à lista original "a", quando alteramos "b", alteramos também "a".
 ```
+
+Usando o método de "Cloning" ou de "Shallow copy", o problema será o mesmo do "Aliasing" se existir uma lista interna dentro da nossa lista:
+
+```
+a = [[1,2,3]]
+
+b = a[:] # Cópia por "cloning", obtemos nova lista "b" que é igual à "a"
+
+print(b) --> [[1, 2, 3]]
+
+b[0][0] = 9 # Alteração do primeiro item da lista interna da lista "b", que passará de 1 para 9 (ou seja, agora b = [[9, 2, 3]])
+
+print(a) --> [[9, 2, 3]] # Mas a lista original "a" também foi alterada! Porque a lista interna de "b" é apenas uma referência em memória à lista interna de "a", quando alteramos a lista interna de "b", alteramos também a de "a".
+
+O mesmo acontece se for usado o método "Shallow copy":
+
+from copy import copy
+
+c = [[4,5,6]]
+
+d = copy(c) # Cópia por "Shallow copy", obtemos nova lista "d" que é igual à "c"
+
+```
+
 ## Rever conceito de "Função" (inclui docstring e return) e "Procedimento" (sem return e sem garantias na docstring)
 
 ## Rever conceito de "Programação por contrato" (docstring) versus "Programação defensiva"
