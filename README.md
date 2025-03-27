@@ -23,3 +23,41 @@ Atalho para autocomplete:
 TAB
 ```
 
+Para converter uma lista num tuplo, usar função tuple():
+
+```
+lista1 = [1,2,3]
+
+tuplo1 = tuple(lista1)
+```
+
+Para converter um tuplo numa lista, usar a função list():
+```
+tuplo2 = (4,5,6)
+
+lista2 = list(tuplo2)
+```
+
+Para converver um tuplo numa lista também pode ser usado pex um ciclo "for" para iterar sobre os elementos do tuplo e adicioná-los a uma nova lista usando a função append():
+
+```
+tuplo3 = (7,8,9)
+
+lista3 = []
+
+for item in tuplo3:
+  lista3.append(item)
+```
+
+
+## É possível efetuar diferentes tipos de cópias de estruturas de objectos, mas é necessário ter especial cuidado no tipo de cópia usada nomeadamente quando se trata de um objecto mutável, pois por vezes é apenas criada uma referência em memória relativa ao objecto original e não uma cópia totalmente nova e independente
+
+Por exemplo, quando se usa a forma mais simples de cópia, estamos a usar o método de "Aliasing":
+
+```
+```
+## Rever conceito de "Função" (inclui docstring e return) e "Procedimento" (sem return e sem garantias na docstring)
+
+## Rever conceito de "Programação por contrato" (docstring) versus "Programação defensiva"
+
+
