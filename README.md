@@ -50,7 +50,7 @@ for item in tuplo3:
 ```
 
 
-## É possível efetuar diferentes tipos de cópias de estruturas de objectos, mas é necessário ter especial cuidado no tipo de cópia usada nomeadamente quando se trata de um objecto mutável, pois por vezes é apenas criada uma referência em memória relativa ao objecto original e não uma cópia totalmente nova e independente
+## É possível efetuar diferentes tipos de cópias de estruturas de objectos, mas é necessário ter especial cuidado no tipo de cópia usada nomeadamente quando se trata de um objecto mutável, pois por vezes é apenas criada uma referência à localização em memória relativa ao objecto original e não uma cópia totalmente nova e independente
 
 Por exemplo, quando se usa a forma mais simples de cópia, estamos a usar o método de "Aliasing":
 
@@ -63,7 +63,7 @@ print(b) --> [1,2,3]
 
 b[0] = 5 # Alteração do item com índice zero na nova lista "b", que passará de 1 para 5 (ou seja, agora b = [5,2,3])
 
-print(a) --> [5,2,3] # Mas a lista original "a" também foi alterada! Porque a nova lista "b" é apenas uma referência em memória à lista original "a", quando alteramos "b", alteramos também "a".
+print(a) --> [5,2,3] # Mas a lista original "a" também foi alterada! Porque a nova lista "b" é apenas uma referência à localização em memória à lista original "a", quando alteramos "b", alteramos também "a".
 ```
 
 Usando o método de "Cloning" ou de "Shallow copy", o problema será o mesmo do "Aliasing" se existir uma lista interna dentro da nossa lista:
@@ -77,7 +77,7 @@ print(b) --> [[1, 2, 3]]
 
 b[0][0] = 9 # Alteração do primeiro item da lista interna da lista "b", que passará de 1 para 9 (ou seja, agora b = [[9, 2, 3]])
 
-print(a) --> [[9, 2, 3]] # Mas a lista original "a" também foi alterada! Porque a lista interna de "b" é apenas uma referência em memória à lista interna de "a", quando alteramos a lista interna de "b", alteramos também a de "a".
+print(a) --> [[9, 2, 3]] # Mas a lista original "a" também foi alterada! Porque a lista interna de "b" é apenas uma referência à localização em memória à lista interna de "a", quando alteramos a lista interna de "b", alteramos também a de "a".
 
 # O mesmo acontece se for usado o método "Shallow copy":
 
@@ -85,7 +85,7 @@ from copy import copy
 
 c = [[4,5,6]]
 
-d = copy(c) # Cópia por "Shallow copy", obtemos nova lista "d" que é igual à "c" (mas que tem uma referência em memória à lista interna de "d")
+d = copy(c) # Cópia por "Shallow copy", obtemos nova lista "d" que é igual à "c" (mas que tem uma referência à localização em memória à lista interna de "d")
 
 ```
 
@@ -97,6 +97,13 @@ from copy import deepcopy
 e = [[7,8,9]]
 
 f = deepcopy(e) # Cópia por "Deepcopy", obtemos nova lista "f" que é igual e independente de "e"
+
+f[0][0] = 10 # Alteração do primeiro item da lista interna da lista "f", que passará de 7 para 10 (ou seja, agora f = [[10, 8, 9]])
+
+print(f) --> [[10, 8, 9]] 
+
+print(e) --> [[7, 8, 9]] # A lista interna original de "e" não foi alterada, uma vez que têm referências em memória que são independentes
+
 ```
 
 ## Rever conceito de "Função" (inclui docstring e return) e "Procedimento" (sem return e sem garantias na docstring)
