@@ -79,7 +79,7 @@ b[0][0] = 9 # Alteração do primeiro item da lista interna da lista "b", que pa
 
 print(a) --> [[9, 2, 3]] # Mas a lista original "a" também foi alterada! Porque a lista interna de "b" é apenas uma referência em memória à lista interna de "a", quando alteramos a lista interna de "b", alteramos também a de "a".
 
-O mesmo acontece se for usado o método "Shallow copy":
+# O mesmo acontece se for usado o método "Shallow copy":
 
 from copy import copy
 
