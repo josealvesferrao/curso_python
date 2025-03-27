@@ -89,6 +89,16 @@ d = copy(c) # Cópia por "Shallow copy", obtemos nova lista "d" que é igual à 
 
 ```
 
+Usando o método de "Deepcopy", a cópia será totalmente independente da original, ou seja, tem a sua própria referência em memória, o que significa que quando alteramos uma das listas, não afetamos a outra:
+
+```
+from copy import deepcopy
+
+e = [[7,8,9]]
+
+f = deepcopy(e) # Cópia por "Deepcopy", obtemos nova lista "f" que é igual e independente de "e"
+```
+
 ## Rever conceito de "Função" (inclui docstring e return) e "Procedimento" (sem return e sem garantias na docstring)
 
 ## Rever conceito de "Programação por contrato" (docstring) versus "Programação defensiva"
