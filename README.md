@@ -85,7 +85,7 @@ from copy import copy
 
 c = [[4,5,6]]
 
-d = copy(c) # Cópia por "Shallow copy", obtemos nova lista "d" que é igual à "c"
+d = copy(c) # Cópia por "Shallow copy", obtemos nova lista "d" que é igual à "c" (mas que tem uma referência em memória à lista interna de "d")
 
 ```
 
