@@ -16,6 +16,6 @@ Aceder/percorrer os comandos previamente introduzidos/executados
 ALT + p # previous
 
 ALT + n # next
-´´´
+```
 
 
