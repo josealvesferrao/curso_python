@@ -10,7 +10,7 @@ No final do curso, os formandos deverão ser capazes de construir pequenos progr
 
 Atalhos úteis para usar na shell do IDLE
 
-Aceder/percorrer os comandos previamente introduzidos/executados
+Aceder/percorrer os comandos previamente introduzidos/executados:
 
 ```
 ALT + p # previous
@@ -18,4 +18,8 @@ ALT + p # previous
 ALT + n # next
 ```
 
+Atalho para autocomplete:
+```
+TAB
+```
 
