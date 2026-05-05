@@ -23,6 +23,17 @@ Atalho para autocomplete:
 TAB
 ```
 
+Para saltar uma linha (pex a primeira linha duma tabela, o cabeçalho)
+```
+import csv
+
+data = open (ficheiro)
+
+tabela = csv.reader(data, delimiter = ';')
+
+headers = next(tabela) # Para saltar/excluir a linha de cabeçalho do ficheiro
+```
+
 Para converter uma lista num tuplo, usar função tuple():
 
 ```
